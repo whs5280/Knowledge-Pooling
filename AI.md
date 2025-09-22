@@ -90,3 +90,25 @@
 > 离线推理与数据预处理
 >
 > 模型服务网关
+
+
+### php代码[yield]
+```shell
+    public function test(Request $request): StreamedResponse
+    {
+        $message = $request->getContent();
+        return response()->eventStream(function () use ($message) {
+            yield $message;
+            $msgData = json_decode($message, true);
+            $stream = OpenAI::chat()->createStreamed([
+                'model' => 'deepseek-chat',
+                'messages' => [
+                    ['role' => 'user', 'content' => $msgData['message']],
+                ]
+            ]);
+            foreach ($stream as $response) {
+                yield $response->choices[0];
+            }
+        }, endStreamWith: new StreamedEvent(event: 'update', data: 'end'));
+    }
+```
