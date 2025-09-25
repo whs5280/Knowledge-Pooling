@@ -26,3 +26,6 @@
 
 ### docker images 位置
 `docker info | grep -i 'docker root dir'`
+
+### window docker 卡顿
+> 文件转化耗时 `https://www.shuxiaoyuan.com/blog/info/101`
