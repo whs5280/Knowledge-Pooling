@@ -122,6 +122,29 @@ INSERT IGNORE INTO b_case_section_pub(case_id,space,space_order)\n
 ```
 
 
+### count统计
+> `count(*)`、`count(1)` 统计全部数量
+> 
+> `count(name)` 统计非NULL数量，不会统计 `NULL`
+
+
+### 大数据分页
+> `limit` 分页原理
+> + 1、MySql将查询出1000010条记录。
+> + 2、然后舍掉前面的1000000条记录。
+> + 3、返回剩下的10条记录。
+
+> 使用游标分页
+> `SELECT * FROM users WHERE id > 100000 ORDER BY id LIMIT 20;`
+
+
+### 数据归档
+> 1. 数据迁移，创建归档表（如果不存在）
+> 2. 迁移去年数据到归档表
+> 3. 验证数据一致性（归档数据是否和原先的一致）
+> 4. 删除已归档数据（谨慎操作）
+
+
 ### 校对规则问题 
 > `utf8mb4_general_ci` 不区分大小写
 >
