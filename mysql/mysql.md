@@ -232,3 +232,7 @@ INSERT IGNORE INTO b_case_section_pub(case_id,space,space_order)\n
 > `https://learnku.com/articles/61064`
 >
 > > ![执行过程](1.png)
+
+
+### SQL语法的坑
+> `https://topjavaer.cn/advance/excellent-article/7-sql-optimize.html`
