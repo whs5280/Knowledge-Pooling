@@ -23,3 +23,6 @@
 
 ### Charles
 > `https://www.charlesproxy.com/download/`
+
+### GitBook
+> `https://www.gitbook.com/?utm_source=legacy&utm_medium=redirect&utm_campaign=close_legacy`
